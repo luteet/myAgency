@@ -74,7 +74,6 @@ $(function(){
         burger = $('.menu__burger'),
         header_top = $('.header__top--inner'),
         phone_btn_check = false;
-
         function screenSize(){
             if($(window).width() <= 768 && phone_btn_check == false) {
                 phone_btn_check = true;
@@ -84,7 +83,7 @@ $(function(){
             }
             else if($(window).width() > 768 && phone_btn_check == true){
                 phone_btn_check = false;
-                $(phone_btn).appendTo($(header_top));
+                $(phone_btn).appendTo($(header_top)).css('display', 'block');;
                 $(menu).css('display', 'block');
             }
         }

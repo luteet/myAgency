@@ -708,6 +708,7 @@ template {
 }
 
 .header__top--contact {
+  display: none;
   height: 100%;
 }
 
