@@ -192,12 +192,6 @@ button {
   width: 35px;
   height: 30px;
   overflow: hidden;
-  /* @media (max-width: 768px) {
-            & {
-                right: 15px; top: 14px;
-                width: 40px; height: 30px;
-            }
-        } */
 }
 
 .menu__burger span {
