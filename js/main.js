@@ -76,6 +76,7 @@ $(function(){
         phone_btn_check = false;
 
         $(phone_btn).css('display', 'block');
+        console.log(0);
         function screenSize(){
             if($(window).width() <= 768 && phone_btn_check == false) {
                 phone_btn_check = true;
