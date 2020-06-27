@@ -664,14 +664,11 @@ template {
   display: none;
 }
 
-.div {
-  height: 2000px;
-  width: 100%;
-}
-
 .header {
   position: relative;
-  background: url(../img/header-bg.jpg) center center/cover no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
   padding: 75px 0px 0px 0px;
@@ -1058,10 +1055,6 @@ template {
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   margin: 15px 0 0 0;
-}
-
-.webp .header {
-  background: url(../img/header-bg.webp) center center/cover no-repeat;
 }
 
 @media (min-width: 768px) {
