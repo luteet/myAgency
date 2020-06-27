@@ -74,6 +74,8 @@ $(function(){
         burger = $('.menu__burger'),
         header_top = $('.header__top--inner'),
         phone_btn_check = false;
+
+        $(phone_btn).css('display', 'block');
         function screenSize(){
             if($(window).width() <= 768 && phone_btn_check == false) {
                 phone_btn_check = true;
