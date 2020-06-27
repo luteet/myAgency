@@ -966,6 +966,7 @@ template {
 
 .header__content--icon {
   width: 150px;
+  text-align: center;
 }
 
 .header__content--icon img {
@@ -1528,6 +1529,14 @@ template {
     background-color: #E16451;
   }
 
+  .header {
+    padding: 55px 0px 0px 0px;
+  }
+
+  .header:before {
+    margin: -55px 0 0 0;
+  }
+
   .header__top {
     height: 55px;
   }
@@ -1570,10 +1579,6 @@ template {
     margin: 20px 0 0 0;
     width: 100%;
     height: 75px;
-  }
-
-  .header__content--icon {
-    width: 100px;
   }
 
   .about__inner {
@@ -1653,7 +1658,8 @@ template {
 
 @media (max-width: 500px) {
   .main-title {
-    font-size: 50px;
+    font-size: 60px;
+    margin: 15px 0 40px;
   }
 
   .title {
@@ -1680,9 +1686,18 @@ template {
 }
 
 @media (max-width: 400px) {
+  .main-title {
+    font-size: 50px;
+  }
+
   .text {
     font-size: 16px;
     line-height: 25px;
+  }
+
+  .header__content--icon img {
+    min-width: 60px;
+    width: 125px;
   }
 }
 
