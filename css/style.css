@@ -92,6 +92,28 @@ h6 {
 
 /*--------------------*/
 
+@-webkit-keyframes header__top {
+  0% {
+
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes header__top {
+  0% {
+
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
 html.lock {
   overflow-y: hidden;
 }
@@ -909,6 +931,9 @@ template {
 }
 
 .header__top {
+  -webkit-transform: translate(0, -100%);
+      -ms-transform: translate(0, -100%);
+          transform: translate(0, -100%);
   position: fixed;
   z-index: 3;
   top: 0;
@@ -916,6 +941,8 @@ template {
   width: 100%;
   height: 75px;
   background-color: #312022;
+  -webkit-animation: header__top .4s ease-in .5s 1 normal forwards;
+          animation: header__top .4s ease-in .5s 1 normal forwards;
 }
 
 .header__top--inner {
