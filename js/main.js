@@ -78,7 +78,7 @@ $(function(){
         function screenSize(){
             if($(window).width() <= 768 && phone_btn_check == false) {
                 phone_btn_check = true;
-                $(phone_btn).fadeOut(0).appendTo($(menu_list)).fadeIn(0);
+                $(phone_btn).appendTo($(menu_list)).css('display', 'block');
                 $(menu).css('display', 'none');
                 $(burger).removeClass('active');
             }
