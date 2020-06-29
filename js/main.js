@@ -122,7 +122,106 @@ $(function(){
 
         $('body').on('click', function() {
             if(!$(this) == $(quest_btn)) {
-                console.log(0);
             }
         });
+
+        function headerHider(settings) {
+
+            if (settings == undefined) {
+                return false;
+            }
+
+            if(settings.elemName == undefined) {
+                return false;
+            }
+
+            if(settings.distance == undefined) {
+                settings.distance = 500;
+            }
+
+            if(settings.fade == undefined) {
+                settings.fade = false;
+            }
+            
+            if(settings.speedAnim == undefined) {
+                settings.speedAnim = 200;
+            }
+
+            let header = settings.elemName,
+            scrollPrev = 0,
+            scrollDown = 0,
+            scrollDownCheck = false,
+            scrollTop = 0,
+            scrollTopCheck = false,
+            scrollToTop = false,
+            scrollToDown = false;
+        $(window).scroll(function() {
+            let scrolled = $(window).scrollTop();
+
+            if(scrolled == 0) {
+                if(settings.classCheck == undefined) {
+                    if(settings.fade == true) {
+                        $(header).fadeIn(settings.speedAnim);
+                    }
+                    else if(settings.fade == false) {
+                        $(header).slideDown(settings.speedAnim);
+                    }
+                }
+                else {
+                    $(header).removeClass(setting.classCheck);
+                }
+                scrollTopCheck = true;
+            }
+
+            if ( scrolled > 100 && scrolled > scrollPrev ) {
+                if(scrollToDown == false) {
+                    scrollToTop = false;
+                    scrollDown = scrolled + settings.distance;
+                    scrollDownCheck = false;
+                }
+                scrollToDown = true;
+            } else {
+                if(scrollToTop == false) {
+                    scrollToDown = false;
+                    scrollTop = scrolled - settings.distance;
+                    scrollTopCheck = false;
+                }
+                scrollToTop = true;
+            }
+            scrollPrev = scrolled;
+            if(scrolled >= scrollDown && scrollDownCheck == false) {
+                if(settings.classCheck == undefined) {
+                    if(settings.fade == true) {
+                        $(header).fadeOut(settings.speedAnim);
+                    }
+                    else if(settings.fade == false) {
+                        $(header).slideUp(settings.speedAnim);
+                    }
+                }
+                else {
+                    $(header).addClass(settings.classCheck);
+                }
+                scrollDownCheck = true;
+            }
+            if(scrollTop >= scrolled && scrollTopCheck == false ) {
+                if(settings.classCheck == undefined) {
+                    if(settings.fade == true) {
+                        $(header).fadeIn(settings.speedAnim);
+                    }
+                    else if(settings.fade == false) {
+                        $(header).slideDown(settings.speedAnim);
+                    }
+                }
+                else {
+                    $(header).removeClass(settings.classCheck);
+                }
+                scrollTopCheck = true;
+            }
+        });
+    }
+
+    headerHider({
+        elemName: $('.header__top'),
+    });    
+
 });
