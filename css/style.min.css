@@ -728,6 +728,10 @@ template {
   animation: headerToDown .4s ease-in .5s 1 normal forwards;
 }
 
+.header__top--logo {
+  padding: 0 15px;
+}
+
 .header__top--inner {
   height: 100%;
   display: -webkit-box;
@@ -929,15 +933,11 @@ template {
   margin: 0 0 30px 0;
 }
 
-.team__slider {
+.team__list {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.team__slider .slick-slide:not(:first-child) {
-  margin: 0 0 0 15px;
 }
 
 .team__box {
@@ -962,11 +962,12 @@ template {
 .team__box--name {
   position: absolute;
   left: 50%;
-  bottom: 5px;
+  bottom: -6%;
   width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  padding: 10px 0;
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
   z-index: 2;
   text-align: center;
   background-color: #E16451;
@@ -1037,7 +1038,7 @@ template {
 .quest__list--content {
   display: none;
   position: relative;
-  margin: 10px 0 0 0;
+  margin: 15px 0 0 0;
   padding: 0 50px 0 0;
 }
 
@@ -1091,6 +1092,75 @@ template {
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   margin: 15px 0 0 0;
+}
+
+.contacts {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.contacts__title {
+  text-align: center;
+}
+
+.contacts__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.contacts__body {
+  width: 50%;
+  background-color: #fff;
+  padding: 25px;
+  -webkit-box-shadow: 0px 0px 23px -7px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 23px -7px rgba(0,0,0,0.75);
+}
+
+.contacts__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.contacts__btn {
+  margin: 20px 0 0 0;
+}
+
+.contacts__input {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  display: block;
+  font-size: 16px;
+  resize: none;
+  padding: 15px;
+  background-color: #f0f0f0;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  border-radius: 5px;
+}
+
+.contacts__input:not(:last-child) {
+  margin: 0 0 15px 0;
+}
+
+.contacts__input:focus {
+  background-color: #e16451;
+  color: #fff;
+}
+
+.contacts__input.textarea {
+  min-height: 250px;
 }
 
 @media (min-width: 768px) {
@@ -1201,6 +1271,7 @@ template {
     -webkit-transform: translate(-50%, 0%);
     -ms-transform: translate(-50%, 0%);
     transform: translate(-50%, 0%);
+    padding: 25px 0;
   }
 
   .team__box--descr {
@@ -1249,7 +1320,7 @@ template {
   .team__box--info:after {
     content: '';
     position: absolute;
-    width: 65%;
+    width: 70%;
     height: 100%;
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
@@ -1456,8 +1527,48 @@ template {
     width: 100%;
   }
 
+  .team__list {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .team__box {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 45%;
+    flex: 1 1 45%;
+    margin: 0 0 15px;
+  }
+
+  .team__box:not(:first-child) {
+    margin: 0 0 15px 15px;
+  }
+
+  .team__box:last-child {
+    margin: 0 0 0;
+  }
+
   .reviews__box--avatar {
     width: 55px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team__box {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    margin: 0 0 15px;
+  }
+
+  .team__box:not(:first-child) {
+    margin: 15px 0 0 0;
+  }
+
+  .team__box:last-child {
+    margin: 15px 0 0 0;
   }
 }
 
