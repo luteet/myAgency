@@ -290,49 +290,18 @@ button {
 
 .menu__btn {
   position: relative;
-  padding: 30px 15px;
+  padding: 28px 15px;
   color: #fff;
   text-transform: uppercase;
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-}
-
-.menu__btn:after {
-  content: attr(data-hover);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 0%;
-  padding: 3px 0;
-  -webkit-transform: translate(-50%, -100%);
-  -ms-transform: translate(-50%, -100%);
-  transform: translate(-50%, -100%);
-  color: transparent;
   overflow: hidden;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  text-align: center;
 }
 
-.menu__btn:before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: translate(-50%, 7%);
-  -ms-transform: translate(-50%, 7%);
-  transform: translate(-50%, 7%);
-}
-
-.menu__btn:hover:after {
-  height: 16%;
-  background-color: #fff;
-  color: #000 !important;
+.menu__btn span {
+  position: relative;
+  z-index: 2;
 }
 
 .btn {
@@ -2711,6 +2680,36 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 @media (min-width: 768px) {
+  .menu__btn:before,
+  .menu__btn:after {
+    content: '';
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    background-color: #faa916;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+
+  .menu__btn:after {
+    top: 0;
+    left: 0;
+  }
+
+  .menu__btn:before {
+    bottom: -5px;
+    left: 0;
+  }
+
+  .menu__btn:hover:before {
+    height: 100%;
+  }
+
+  .menu__btn:hover:after {
+    height: 100%;
+  }
+
   .btn:before,
   .btn:after {
     content: '';
