@@ -287,9 +287,14 @@ $(function(){
         customPlace: true
     });
 
-    let menu_btn = $('.menu__btn');
+    let menu_btn = $('.menu__btn'),
+        start_scroll = false;
 
     $(menu_btn).on('click', function () {
+
+        if(start_scroll == false) {
+            start_scroll = true;
+
         let scrollName = $(this).attr('data-scroll'),
             scrollElem = $(scrollName),
             scrollTop = scrollElem.offset().top;
@@ -313,8 +318,13 @@ $(function(){
             scrollTop: scrollTop
         }, 1500);
          
-            
+        setTimeout(function(){
+            start_scroll= false;
+        }, 1500);
+    }
         });
+
+   
 
         AOS.init();
 
