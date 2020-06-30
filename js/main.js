@@ -297,10 +297,18 @@ $(function(){
         if(scrollName == '#section-4') {
             scrollTop = scrollTop - 200;
         }
-
-        /* $(menu_btn).removeClass('active');
-        $('.header__menu--icon').removeClass('active');
-        $('body').removeClass('lock'); */
+        if($(burger).hasClass('active')){
+            $('body').removeClass('lock');
+            $(burger).removeClass('active');
+            $(menu).removeClass('active').slideToggle(300);
+            if(scrollName == '#section-4') {
+                scrollTop = scrollTop + 100;
+            }
+            if(scrollName == '#section-2') {
+                scrollTop = scrollTop - 100;
+            }
+        }
+        
         $('html, body').animate({
             scrollTop: scrollTop
         }, 1500);
