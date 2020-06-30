@@ -44,19 +44,21 @@ $(function(){
     }
 
     let image_height = 0,
-        image_srcNotWebp;
+        image_srcNotWebp,
+        image_src = '.webp-bg';
 
     
     
 
     ThisIsWebP().then(function() {
-        $.each($('.image-box'), function (index, val) {
+        $.each($(image_src), function () {
         });
     }
     , function() {
-        $.each($('.image-box'), function (index, val) {
+        $.each($(image_src), function () {
             image_srcNotWebp = $(this).data('notwebp');
             $(this).css('background-image', 'url("' + image_srcNotWebp + '")');
+
         });
         
     });
