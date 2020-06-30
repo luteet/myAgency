@@ -2869,6 +2869,8 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .footer__info .text {
