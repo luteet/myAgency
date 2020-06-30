@@ -217,6 +217,7 @@ $(function(){
 
     headerHider({
         elemName: $('.header__top'),
+        distance: 400,
     });
 
     function formCustomer(formSetting) {
@@ -285,5 +286,28 @@ $(function(){
         keySwitch: true,
         customPlace: true
     });
+
+    let menu_btn = $('.menu__btn');
+
+    $(menu_btn).on('click', function () {
+        let scrollName = $(this).attr('data-scroll'),
+            scrollElem = $(scrollName),
+            scrollTop = scrollElem.offset().top;
+
+        if(scrollName == '#section-4') {
+            scrollTop = scrollTop - 200;
+        }
+
+        /* $(menu_btn).removeClass('active');
+        $('.header__menu--icon').removeClass('active');
+        $('body').removeClass('lock'); */
+        $('html, body').animate({
+            scrollTop: scrollTop
+        }, 1500);
+         
+            
+        });
+
+        AOS.init();
 
 });
