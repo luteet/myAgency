@@ -200,7 +200,7 @@ button {
 
 .logo-btn {
   position: relative;
-  z-index: 3;
+  z-index: 101;
 }
 
 .logo-btn img {
@@ -208,10 +208,15 @@ button {
   text-align: center;
 }
 
+.menu {
+  position: relative;
+  z-index: 100;
+}
+
 .menu__burger {
   display: none;
   position: absolute;
-  z-index: 3;
+  z-index: 101;
   right: 15px;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -318,6 +323,42 @@ button {
 .btn span {
   position: relative;
   z-index: 2;
+}
+
+.btn-up {
+  position: fixed;
+  display: none;
+  z-index: 50;
+  right: 30px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: #faa916;
+}
+
+.btn-up:before,
+.btn-up:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.btn-up:after {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: rotate(-20deg) translate(-90%, -300%);
+  -ms-transform: rotate(-20deg) translate(-90%, -300%);
+  transform: rotate(-20deg) translate(-90%, -300%);
+}
+
+.btn-up:before {
+  right: 50%;
+  top: 50%;
+  -webkit-transform: rotate(20deg) translate(90%, -300%);
+  -ms-transform: rotate(20deg) translate(90%, -300%);
+  transform: rotate(20deg) translate(90%, -300%);
 }
 
 .slick-dots {
@@ -2441,7 +2482,8 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   text-align: center;
 }
 
-.contacts__container {
+.contacts__container,
+.contacts__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2459,9 +2501,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 .contacts__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -2512,8 +2551,8 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   padding: 20px 30px;
 }
 
-.quest__list--li:not(:first-child) {
-  margin: -2px 0 0 0;
+.quest__list--li:not(:last-child) {
+  border-bottom: 2px solid transparent;
 }
 
 .quest__list--li:before {
@@ -2583,29 +2622,36 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   opacity: .4;
 }
 
-.footer__container {
+.footer__container,
+.footer__copy {
   position: relative;
   z-index: 2;
 }
 
 .footer__title,
-.footer__text {
+.footer__text,
+.footer__info .text,
+.footer__logo,
+.footer__copy {
   color: #fff;
   text-align: center;
-  margin: 0 0 10px 0;
 }
 
-.footer__text {
-  margin: 0;
+.footer__title,
+.footer__info .text {
+  margin: 0 10px 10px 10px;
 }
 
-.footer__social {
+.footer__social,
+.footer__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 30px auto;
 }
 
@@ -2643,20 +2689,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   fill: #faa916;
 }
 
-.footer__info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
 .footer__info .text {
-  color: #fff;
-  margin: 0 10px;
   border-bottom: 2px solid transparent;
 }
 
@@ -2665,7 +2698,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 .footer__logo {
-  text-align: center;
   margin: 20px 0;
 }
 
@@ -2674,11 +2706,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 .footer__copy {
-  position: relative;
-  z-index: 2;
-  text-align: center !important;
   font-size: 14px;
-  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -2754,6 +2782,13 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
   .slider__icon:hover {
     fill: #faa916;
+  }
+
+  .advantages-btn:before,
+  .advantages-btn:after {
+    -webkit-transition: all .25s ease-in-out !important;
+    -o-transition: all .25s ease-in-out !important;
+    transition: all .25s ease-in-out !important;
   }
 
   .section {
@@ -2906,6 +2941,13 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     opacity: 1;
     visibility: visible;
   }
+
+  .contacts__btn:before,
+  .contacts__btn:after {
+    -webkit-transition: all .4s ease-in-out !important;
+    -o-transition: all .4s ease-in-out !important;
+    transition: all .4s ease-in-out !important;
+  }
 }
 
 @media (max-width: 1040px) {
@@ -2949,6 +2991,11 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
   .btn {
     background-color: #faa916;
+  }
+
+  .btn-up {
+    right: 15px;
+    bottom: 15px;
   }
 
   .header {
@@ -3148,15 +3195,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
-    margin: 0 0 15px;
-  }
-
-  .team__box:not(:first-child) {
-    margin: 15px 0 0 0;
-  }
-
-  .team__box:last-child {
-    margin: 15px 0 0 0;
+    margin: 0 0 15px 0 !important;
   }
 }
 
