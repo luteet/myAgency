@@ -98,10 +98,10 @@ $(function () {
     $(burger).on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('active');
-        if($(this).hasClass('active')) {
+        if($(this).hasClass('active') && $(window).scrollTop() >= 100) {
             $(btn_up).hide();
         }
-        else {
+        else if(!$(this).hasClass('active') && $(window).scrollTop() >= 100) {
             $(btn_up).show();
         }
         $('body').toggleClass('lock');
